@@ -7,7 +7,12 @@ const app = express();
 const port = 3000;
 
 // passing a middle ware functions
-app.use(cors());
+app.use(cors({
+    origin: ["https://ecommerce-admin-panel-1.vercel.app/"],
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+}));
+
 app.use(express.json())
 
 // ✅ Increase request body size limit
