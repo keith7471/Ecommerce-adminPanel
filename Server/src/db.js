@@ -8,22 +8,12 @@ const db = new pg.Client({
     host: process.env.PG_HOST || 'localhost', 
     database: process.env.PG_DATABASE,
     password: process.env.PG_PASSWORD,
-<<<<<<< HEAD
-    port: process.env.PG_PORT || 5433, 
-=======
+    // port: process.env.PG_PORT || 5433, 
     port: process.env.PG_PORT || 5432, 
     ssl: { rejectUnauthorized: false }
->>>>>>> 303a99b6f53e0297edb465dfef741861f207a57e
 });
 
 db.connect().then(() => console.log('Connected to PostgresSQL')).catch((err) => console.log('Database connection error',err));
-
-// database on error
-// db.on('error', (err) =>{
-//     console.error('unexpected error on client', err);
-//     process.exit(-1);
-// });
-
 export const query =(text,params) => db.query(text, params);   // executing the sql query
 
 // text → A string representing the SQL query.
