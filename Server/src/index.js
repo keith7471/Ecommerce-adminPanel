@@ -4,13 +4,13 @@ import clientRoutes from './routes/clientRoute.js'
 import bodyParser from 'body-parser';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // passing a middle ware functions
 app.use(cors({
-    origin: ["https://ecommerce-admin-panel-1.vercel.app/"],
+    origin: ["https://ecommerce-admin-panel-gamma.vercel.app"],
     methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization"
+    // allowedHeaders: "Content-Type,Authorization"
 }));
 
 app.use(express.json())
