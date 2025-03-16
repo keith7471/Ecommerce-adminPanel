@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/clients');
+        const response = await axios.get('https://ecommerce-adminpanel-7ue5.onrender.com/api/clients');
         setProductData(response.data);
       } catch (err) {
         console.error('Error fetching products:', err);
@@ -41,11 +41,11 @@ function App() {
   const handleSubmit = async (newProductData) => {
     try {
       if (formMode === 'add') {
-        const response = await axios.post('http://localhost:3000/api/clients', newProductData);
+        const response = await axios.post('https://ecommerce-adminpanel-7ue5.onrender.com/api/clients', newProductData);
         setProductData((prevData) => [...prevData, response.data]);  // Add new product
       } else {
         try {
-          const response = await axios.put(`http://localhost:3000/api/clients/${selectedProduct.id}`, newProductData);
+          const response = await axios.put(`https://ecommerce-adminpanel-7ue5.onrender.com/api/clients/${selectedProduct.id}`, newProductData);
 
           console.log("the new edit data", response.data)
 
