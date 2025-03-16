@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000;
 
 // passing a middle ware functions
 app.use(cors({
-    origin: ["https://ecommerce-admin-panel-gamma.vercel.app"],
+    origin: ["http://localhost:5173", "https://ecommerce-admin-panel-gamma.vercel.app"],
     methods: "GET,POST,PUT,DELETE",
-    // allowedHeaders: "Content-Type,Authorization"
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json())
