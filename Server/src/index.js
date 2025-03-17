@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 // passing a middle ware functions
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://ecommerce-adminpanel-frontend-xkqe.onrender.com/"],
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
