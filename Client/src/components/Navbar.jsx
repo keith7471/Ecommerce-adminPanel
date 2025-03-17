@@ -9,16 +9,16 @@ const Navbar = ({ onOpen, onSearch }) => {
     }
 
     return (
-        <div className="navbar bg-base-100 shadow-sm rounded">
+        <div className="navbar bg-neutral-100 shadow-sm rounded-lg">
             <div className="navbar-start">
-                <a className="btn btn-ghost text-xl">Shopify</a>
+                <a className="btn btn-ghost text-xl font-bold">Shopify</a>
             </div>
 
             {/* Center - Search Bar (Hidden on Small Screens) */}
             <div className="navbar-center hidden sm:inline">
-                <label className="input flex items-center border rounded-lg px-2 py-1">
+                <label className="input flex items-center border rounded-lg px-2 py-1 w-80" >
                     <svg
-                        className="h-5 w-5 opacity-50"
+                        className="h-4 w-4 opacity-50"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                     >
@@ -35,7 +35,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                     </svg>
                     <input
                         type="search"
-                        className="ml-2 outline-none"
+                        className="outline-none"
                         placeholder="Search"
                         onChange={handleSearchChange}
                     />
@@ -44,7 +44,7 @@ const Navbar = ({ onOpen, onSearch }) => {
 
             {/* Add Product Button */}
             {/* Right Side - Add Product Button (Text Hidden on Small Screens) */}
-            <div className="navbar-end">
+            <div className="navbar-end px-3">
                 <Button
                     variant="outlined"
                     color="primary"
@@ -64,7 +64,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                     }}
                 >
                     <AddIcon fontSize="small"/>
-                    <span className="hidden md:inline">Add Product</span>
+                    <span className="hidden md:inline text-xs">Add Product</span>
                 </Button>
             </div>
 
