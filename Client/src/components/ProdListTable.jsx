@@ -81,7 +81,7 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
                                     <td>
                                         <img
                                             src={prodItem.image_url || 'https://img.icons8.com/color/48/image.png'}
-                                            className='w-10 h-10 object-cover rounded'
+                                            className='w-13 h-13 object-cover rounded hover:cursor-pointer transition-transform hover:scale-110'
                                             alt="Product"
                                         />
                                     </td>
