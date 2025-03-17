@@ -58,7 +58,7 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
 
     return (
         <div className='mt-3'>
-            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 py-2 px-5">
                 <table className="table">
                     <thead>
                         <tr>

@@ -48,9 +48,13 @@ const Navbar = ({ onOpen, onSearch }) => {
                 <Button
                     variant="outlined"
                     color="primary"
-                    startIcon={<AddIcon />}
+                    // startIcon={<AddIcon />}
                     onClick={() => onOpen("add")}
                     sx={{
+                        minWidth: "unset",
+                       
+                        padding: { xs: 0.1, sm: 0.5 },
+                        
                         borderColor: "blue",
                         color: "blue",
                         "&:hover": {
@@ -59,6 +63,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                         },
                     }}
                 >
+                    <AddIcon fontSize="small"/>
                     <span className="hidden md:inline">Add Product</span>
                 </Button>
             </div>
