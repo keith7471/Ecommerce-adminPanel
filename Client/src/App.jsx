@@ -1,9 +1,10 @@
 import { useState, useEffect, lazy } from 'react';
 import Navbar from './components/Navbar';
-const ProdListTable = lazy(() => import('./components/ProdListTable'));
+// const ProdListTable = lazy(() => import('./components/ProdListTable'));
+import ProdListTable from './components/ProdListTable'
 import EditProductForm from './forms/EditProductForm';
 import axios from 'axios';
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 
 
 function App() {
@@ -71,20 +72,20 @@ function App() {
   return (
     <div className='px-5 py-2'>
       <Navbar onOpen={handleOpenForm} onSearch={setSearchItem} />
-      <Suspense
+      {/* <Suspense
         fallback={
           <div className="flex justify-center items-center h-[75vh]">
             <span className="loading loading-spinner loading-2xl text-blue-500 w-15 h-15">Loading</span>
           </div>
         }
-      >
+      > */}
         <ProdListTable
           handleOpenForm={handleOpenForm}
           searchItem={searchItem}
           setProductData={setProductData}
           productData={productData}
         />
-      </Suspense>
+      {/* </Suspense> */}
       <EditProductForm
         isOpen={isOpen}
         onClose={handleCloseForm}

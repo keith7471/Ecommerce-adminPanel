@@ -99,14 +99,15 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
                                 </tr>
                             ))
                         ) : (
-                            
-                                <td className="text-center">
-                                    <div className="flex justify-center items-center">
-                                        <div className="animate-spin rounded-full border-blue-500 border-solid w-15 h-15"></div>
+                            <tr>
+                                <td colSpan="6" className="text-center">
+                                    <div className="flex justify-center items-center h-[50vh]">
+                                        <span className="loading loading-spinner text-blue-500 w-14 h-14"></span>
                                     </div>
                                     {/* <p className="text-gray-500 mt-2">No products found</p> */}
                                 </td>
-                            
+                            </tr>
+
                         )}
                     </tbody>
                 </table>
