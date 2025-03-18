@@ -11,3 +11,4 @@ router.delete('/products/:id', clientController.deleteProduct);
 router.get('/products/search', clientController.searchProduct);
 
 export default router;
+
