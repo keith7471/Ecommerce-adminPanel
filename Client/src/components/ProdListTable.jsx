@@ -16,7 +16,7 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
         const controller = new AbortController();
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://ecommerce-adminpanel-7ue5.onrender.com/api/clients');
+                const response = await axios.get('https://ecommerce-adminpanel-7ue5.onrender.com/admin/products');
                 setProductData(response.data);
             } catch (err) {
                 console.error(err)
@@ -37,7 +37,7 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
         const confirmDelete = window.confirm('Are you sure you want to delete this product?');
         if (confirmDelete) {
             try {
-                await axios.delete(`https://ecommerce-adminpanel-7ue5.onrender.com/api/clients/${id}`);
+                await axios.delete(`https://ecommerce-adminpanel-7ue5.onrender.com/admin/products/${id}`);
 
                 // ✅ Immediately update the UI by removing the deleted item
                 setProductData((prevData) => prevData.filter(prod => prod.id !== id));

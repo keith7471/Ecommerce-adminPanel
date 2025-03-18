@@ -59,7 +59,7 @@ const EditProductForm = ({ isOpen, onClose, formMode, onSubmit, productData }) =
                         <input
                             type="text"
                             placeholder="Product SKU"
-                            className="input input-md"
+                            className="input input-md w-full"
                             value={sku}
                             onChange={(e) => setSku(e.target.value)}
                         />
@@ -71,7 +71,7 @@ const EditProductForm = ({ isOpen, onClose, formMode, onSubmit, productData }) =
                         <input
                             type="text"
                             placeholder="Product Name"
-                            className="input input-md"
+                            className="input input-md w-full"
                             value={productName}
                             onChange={(e) => setProductName(e.target.value)}
                         />
@@ -83,7 +83,7 @@ const EditProductForm = ({ isOpen, onClose, formMode, onSubmit, productData }) =
                         <input
                             type="number"
                             placeholder="Price"
-                            className="input input-md"
+                            className="input input-md w-full"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
                         />
@@ -92,7 +92,7 @@ const EditProductForm = ({ isOpen, onClose, formMode, onSubmit, productData }) =
                     {/* Image Upload */}
                     <label className="floating-label mt-4">
                         <span>Product Image</span>
-                        <input type="file" className="file-input file-input-sm" accept="image/*" onChange={handleFileUpload} />
+                        <input type="file" className="file-input file-input-sm w-full" accept="image/*" onChange={handleFileUpload} />
                         {imageUrl && <img src={imageUrl} alt="Preview" className="mt-2 w-16 h-16 object-cover rounded" />}
                     </label>
 
