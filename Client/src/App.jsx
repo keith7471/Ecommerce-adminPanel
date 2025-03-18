@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy } from 'react';
 import Navbar from './components/Navbar';
-import ProdListTable from './components/ProdListTable';
+const ProdListTable = lazy(() => import('./components/ProdListTable'));
 import EditProductForm from './forms/EditProductForm';
 import axios from 'axios';
-import ProductPagination from './components/ProductPagination.jsx';
+import { Suspense } from 'react';
 
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
             prevData.map((product) =>
               product.id === selectedProduct.id ? response.data : product
             ));
-            
+
         }
         catch (err) {
           console.log("Error updating the product", err)
@@ -71,7 +71,20 @@ function App() {
   return (
     <div className='px-5 py-2'>
       <Navbar onOpen={handleOpenForm} onSearch={setSearchItem} />
-      <ProdListTable handleOpenForm={handleOpenForm} searchItem={searchItem} setProductData={setProductData} productData={productData}/>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center h-[75vh]">
+            <span className="loading loading-spinner loading-2xl text-blue-500 w-15 h-15">Loading</span>
+          </div>
+        }
+      >
+        <ProdListTable
+          handleOpenForm={handleOpenForm}
+          searchItem={searchItem}
+          setProductData={setProductData}
+          productData={productData}
+        />
+      </Suspense>
       <EditProductForm
         isOpen={isOpen}
         onClose={handleCloseForm}
