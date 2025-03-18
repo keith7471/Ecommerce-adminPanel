@@ -15,11 +15,11 @@ app.use(cors({
 
 app.use(express.json())
 
-// ✅ Increase request body size limit
+// Increase request body size limit
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
-app.use('/api',clientRoutes)
+app.use('/admin',clientRoutes)
 
 app.listen(port, () =>{
     console.log(`listening on port: ${port}`)
