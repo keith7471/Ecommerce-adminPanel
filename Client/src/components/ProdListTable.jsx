@@ -62,7 +62,7 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>id</th>
+                            <th>ID</th>
                             <th>SKU</th>
                             <th>Name</th>
                             <th>Price</th>
@@ -74,14 +74,14 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
                         {filteredProductsData.length > 0 ? (
                             currentProducts.map((prodItem, index) => (
                                 <tr key={prodItem.id}>
-                                    <th>{indexOfFirstItem + index + 1}</th>
+                                    <td>{indexOfFirstItem + index + 1}</td>
                                     <td>{prodItem.sku}</td>
                                     <td>{prodItem.product_name}</td>
                                     <td>${prodItem.price || 'N/A'}</td>
                                     <td>
                                         <img
                                             src={prodItem.image_url || 'https://img.icons8.com/color/48/image.png'}
-                                            className='w-13 h-13 object-cover rounded hover:cursor-pointer transition-transform hover:scale-110'
+                                            className="w-14 h-14 object-cover rounded hover:cursor-pointer transition-transform hover:scale-110"
                                             alt="Product"
                                         />
                                     </td>
@@ -99,27 +99,35 @@ const ProdListTable = ({ handleOpenForm, searchItem, setProductData, productData
                                 </tr>
                             ))
                         ) : (
-                            <tr>
-                                <td colSpan="6" className="text-center text-gray-500">No products found</td>
-                            </tr>
+                            
+                                <td className="text-center">
+                                    <div className="flex justify-center items-center">
+                                        <div className="animate-spin rounded-full border-blue-500 border-solid w-15 h-15"></div>
+                                    </div>
+                                    {/* <p className="text-gray-500 mt-2">No products found</p> */}
+                                </td>
+                            
                         )}
                     </tbody>
                 </table>
+
             </div>
             {/* <hr className="border-gray-300 my-12" /> */}
             {/* Pagination */}
-            {filteredProductsData.length > 0 && (
-                <div className="fixed bottom-2 left-0 w-full bg-white shadow-md py-3 flex justify-center">
-                    <ProductPagination
-                        count={Math.ceil(filteredProductsData.length / itemsPerPage)}
-                        page={currentPage}
-                        onChange={handlePageChange}
-                        variant="outlined"
-                        shape="rounded"
-                    />
-                </div>
-            )}
-        </div>
+            {
+                filteredProductsData.length > 0 && (
+                    <div className="fixed bottom-2 left-0 w-full bg-white shadow-md py-3 flex justify-center">
+                        <ProductPagination
+                            count={Math.ceil(filteredProductsData.length / itemsPerPage)}
+                            page={currentPage}
+                            onChange={handlePageChange}
+                            variant="outlined"
+                            shape="rounded"
+                        />
+                    </div>
+                )
+            }
+        </div >
     );
 };
 
